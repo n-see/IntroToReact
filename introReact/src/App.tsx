@@ -1,10 +1,13 @@
 
 import { useState } from "react";
 import Alert from "./components/Alert/Alert";
-import Button from "./components/Button";
+import Button from "./components/Button/Button";
 import ListGroup from "./components/ListGroup/ListGroup";
 import MyuseStateExample from "./components/MyuseStateExample";
 import { BsCalendarDateFill } from "react-icons/bs";
+import Like from "./components/Like/Like";
+import { FaRegThumbsUp } from "react-icons/fa";
+import { FaThumbsUp } from "react-icons/fa";
 
 
 
@@ -36,10 +39,15 @@ function App(){
   const [display, setDisplay] = useState(false)
   const handleClick2 = () => {
     setDisplay(!display)
+
   }
+
   return(
     <>
+      <div>
 
+        <Like />
+      </div> 
       <BsCalendarDateFill color="red" size={80} />
       <div>
         {/* (display == true) ? <Alert> YOu Clicked .. <Alert /> : null */}

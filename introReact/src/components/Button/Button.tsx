@@ -1,3 +1,4 @@
+import styles from './Button.module.css'
 interface ButtonProps {
     children:string
     onClickFunction:() => void
