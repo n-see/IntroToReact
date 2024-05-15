@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import Alert from "./components/Alert";
+import Alert from "./components/Alert/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup/ListGroup";
 import MyuseStateExample from "./components/MyuseStateExample";
@@ -40,8 +40,8 @@ function App(){
   return(
     <>
 
-      <div>
       <BsCalendarDateFill color="red" size={80} />
+      <div>
         {/* (display == true) ? <Alert> YOu Clicked .. <Alert /> : null */}
         {display ? <Alert closeAlertFunction={handleClick2}> You clicked the Show Button! </Alert> : null}
         <Button color="primary" onClickFunction={handleClick}>One Button</Button>
