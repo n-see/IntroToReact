@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './ListGroup.module.css'
 
 interface ListProps {
   items: string []
@@ -48,13 +49,13 @@ const ListGroup = ({items, heading, onSelectedItem}: ListProps) => {
     <>
       <h1>{heading}</h1>
       {getMessage()}
-      <ul className="list-group">
+      <ul className={[styles.ListGroup,styles.container].join(' ')}>
         {items.map((item, index) => (
           <li
             className={
               selectedIndex == index
-                ? "list-group-item active"
-                : "list-group-item"
+                ? styles['listGroupItem']
+                : styles['listGroupItem']
             }
             key={index}
             onClick={() => {setSelectedIndex(index)
