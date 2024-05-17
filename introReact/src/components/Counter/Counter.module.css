@@ -1,0 +1,10 @@
+.btnPrimary{
+    background-color: blue;
+    color: white;
+    margin: 10px;
+}
+.btnSecondary{
+    background-color: red;
+    color: white;
+    margin: 10px;
+}

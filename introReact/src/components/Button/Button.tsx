@@ -9,7 +9,7 @@ const Button = ({children, color, onClickFunction}:ButtonProps) => {
 
   return (
     <>
-    <button className={`btn btn-${color}`} onClick={onClickFunction}>{children}</button>
+    <button className={styles['btnPrimary']} onClick={onClickFunction}>{children}</button>
     
     </>
   )

@@ -11,9 +11,7 @@ const Like = () => {
     }
   return (
     <>
-        <div>
             {changeImage ? <FaRegThumbsUp size={80} onClick={toggleImg}/> : <FaThumbsUp size={80} onClick={toggleImg}/>}
-        </div>
     </>
   )
 }
