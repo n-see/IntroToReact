@@ -11,7 +11,7 @@ Part 2: Create a Button.module.css and style the button to make it look as close
 
 The component should be an icon.
 The Button.module.css should be in its own Button Folder and move your Button.tsx into that folder.
-// Peer Reviewed by: 
+// Peer Reviewed by: Alicia
  //Comments: Like icon works great!!! Great job Neo.
 
 
