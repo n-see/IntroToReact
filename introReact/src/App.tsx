@@ -7,6 +7,8 @@ import { BsCalendarDateFill } from "react-icons/bs";
 import Like from "./components/Like/Like";
 import Counter from "./components/Counter/Counter";
 import Message from "./Message";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 
 
@@ -76,14 +78,61 @@ const handleDrink =() => {
     }
   });
 
-//create a function to handle a nested object update the zip code: 95212 and cosole.log it
+//create a function to handle a nested object update the zip code: 95212 and console.log it
 
 const handleCustomer = () => {
   setCustomer({...customer, address:{...customer.address,zipCode:95212}})
 }
 
+//How to update an array
+
+//create a useState to hold two string in an Array
+
+const [tags, setTags] = useState(['happy ', 'cheer ', 'happy '])
+
+//create a helper function to add to our array with java script //
+
+const handleArray = () => {
+  setTags([...tags, 'exciting '])
+}
+console.log(tags)
+
+//lets create a helper function to delete happy from this array
+
+const handleDelete = () => {
+  setTags(tags.filter(tag => tag !== 'happy '));
+}
+
+//lets create a helper function to update "happy " to  "happiness "
+const handleUpdate = () => {
+  setTags(tags.map((tag => tag == "happy " ?  'happiness ' : tag)))
+}
+
+//create a useState tis useState wi;; have an array of objects
+const [bugs, setBugs] = useState([
+  {id: 1, title:'Bug 1', fixed: false},
+  {id: 2, title:'Bug 2', fixed: false},
+  {id: 3, title:'Bug 3', fixed: false}
+])
+//need a helper function to help us update this array of objects, we want toi change fixed from false to true using the id
+const handleBug = () => {
+  setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true} : bug))
+}
+
+// how to share state with other components -------------------------------------------------
+
+//lets create our useState for our CartItems hard code three items in an array
+
+const [CartItem, setCartItem] = useState(['Product 1 ', 'Product 2 ', 'Product 3 ', 'Product 4'])
+
+//create a helper function to reset our cart items
+  const resetCart = () => {
+    setCartItem([])
+  }
   return(
     <>
+    <NavBar cartItemCount={CartItem.length}/>
+    <Cart onReset={resetCart} cartItems={CartItem}/>
       {/* <Message />
       <Message />
       <Message /> */}
@@ -97,6 +146,11 @@ const handleCustomer = () => {
         {/* (display == true) ? <Alert> YOu Clicked .. <Alert /> : null */}
         {display ? <Alert closeAlertFunction={handleClick2}> You clicked the Show Button! </Alert> : null}
         <Button color="primary" onClickFunction={handleClick}>One Button</Button>
+        <Button color="primary" onClickFunction={handleBug}>Update bug Button</Button>
+        {bugs.map(bug => <p key={bug.id}>{bug.id}{bug.fixed ? 'fixed' : "New bug"}</p>)}
+        <Button color="primary" onClickFunction={handleUpdate}>array happiness Button</Button> <span>{tags}</span>
+        <Button color="primary" onClickFunction={handleDelete}>Array delete happy Button</Button><span>{tags}</span>
+        <Button color="primary" onClickFunction={handleArray}>Array Add Button</Button><span>{tags}</span>
         <Button color="success" onClickFunction={handleClick}>Two Button</Button>
         <Button color="danger" onClickFunction={handleClick2}>Show</Button>
         <Button color="info" onClickFunction={handleClick2}>Four Button</Button> {person.firstName} { person.lastName}
